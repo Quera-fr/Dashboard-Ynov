@@ -1,0 +1,13 @@
+
+
+
+# Conception d'une interface permettant :
+
+1 --> de charger un fichier CSV
+
+2 --> d'afficher quelques grafiques en fonction des colonnes sélectionnées par l'utilisateur
+
+3 --> d'éditer le jeu de données puis de le télécharger
+
+
+L'application doit être déployée sur Streamlit Cloud ou Heroku
