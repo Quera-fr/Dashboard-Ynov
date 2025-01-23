@@ -28,7 +28,7 @@ try :
     key = os.environ['API_KEY']
     st.sidebar.write(key)
 except:
-    st.sidebar.error('Absence de clé')
+    st.sidebar.error('Absence de clé - 2')
 
 df = load_data()
 
