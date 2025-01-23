@@ -9,10 +9,17 @@ st.set_page_config(
     layout="wide", # wide
 )
 
+
+
 @st.cache_data
 def load_data():
     return pd.read_csv('https://raw.githubusercontent.com/Quera-fr/Python-Programming/refs/heads/main/data.csv')
 
+
+try :
+    st.sidebare.write(st.secrets['API_KEY'])
+except:
+    st.error('Absence de clé')
 
 df = load_data()
 
