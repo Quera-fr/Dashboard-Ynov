@@ -26,7 +26,6 @@ except:
 # Clé secrete sur Heroku (server linux)
 try :
     key = os.environ['API_KEY']
-    st.sidebar.write('key')
     st.sidebar.write(key)
 except:
     st.sidebar.error('Absence de clé - 2')
