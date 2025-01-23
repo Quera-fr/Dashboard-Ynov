@@ -17,9 +17,9 @@ def load_data():
 
 
 try :
-    st.sidebare.write(st.secrets['API_KEY'])
+    st.sidebar.write(st.secrets['API_KEY'])
 except:
-    st.error('Absence de clé')
+    st.sidebar.error('Absence de clé')
 
 df = load_data()
 
