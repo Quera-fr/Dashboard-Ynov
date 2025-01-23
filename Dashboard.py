@@ -9,7 +9,12 @@ st.set_page_config(
     layout="wide", # wide
 )
 
-df = pd.read_csv('https://raw.githubusercontent.com/Quera-fr/Python-Programming/refs/heads/main/data.csv')
+@st.cache_data
+def load_data():
+    return pd.read_csv('https://raw.githubusercontent.com/Quera-fr/Python-Programming/refs/heads/main/data.csv')
+
+
+df = load_data()
 
 # Title
 st.title('My Dashboard - Kevin Duranty')
