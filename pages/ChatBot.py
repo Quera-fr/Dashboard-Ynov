@@ -35,7 +35,6 @@ if prompt := st.chat_input("What is up?"):
     img = soup.find('article').find('img')['src']
     link = soup.find('article').find('a').attrs["href"]
 
-    response = f"<h1>{titre}</h1>"
     # Display assistant response in chat message container
     with st.chat_message("assistant"):
         col1, col2 = st.columns(2)
@@ -43,6 +42,7 @@ if prompt := st.chat_input("What is up?"):
             st.subheader(titre)
         with col2:
             st.image(img)
+            st.link_button("Go to gallery", link)
 
     # Add assistant response to chat history
     st.session_state.messages.append({"role": "assistant", "content": (titre, img, link)})
