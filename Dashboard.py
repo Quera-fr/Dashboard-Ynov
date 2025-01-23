@@ -16,8 +16,17 @@ def load_data():
     return pd.read_csv('https://raw.githubusercontent.com/Quera-fr/Python-Programming/refs/heads/main/data.csv')
 
 
+import os
+
 try :
     st.sidebar.write(st.secrets['API_KEY'])
+except:
+    st.sidebar.error('Absence de clé')
+
+# Clé secrete sur Heroku (server linux)
+try :
+    key = os.environ['API_KEY']
+    st.sidebar.write(key)
 except:
     st.sidebar.error('Absence de clé')
 
