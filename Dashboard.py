@@ -12,7 +12,7 @@ st.set_page_config(
 df = pd.read_csv('https://raw.githubusercontent.com/Quera-fr/Python-Programming/refs/heads/main/data.csv')
 
 # Title
-st.title('My Dashboard')
+st.title('My Dashboard - Kevin Duranty')
 
 # Subtitle
 st.subheader('Présentation de données')
