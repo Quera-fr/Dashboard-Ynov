@@ -1,1 +1,1 @@
-web: streamlit run Dashbord.py
+web: streamlit run Dashboard.py
