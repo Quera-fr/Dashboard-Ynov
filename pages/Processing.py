@@ -10,9 +10,6 @@ st.set_page_config(
     layout="wide", # wide
 )
 
-st.title('Data Processing')
-
-
 # Upload file
 uploaded_file = st.file_uploader("Choose a file", type="csv")
 
@@ -23,8 +20,7 @@ if uploaded_file is not None:
     df = pd.read_csv(uploaded_file, delimiter=';')
 
     if st.sidebar.checkbox('Data Editor'):
-
-       
+        st.title('Data Processing')
 
         # SELECT COLUNS
         selected_columns = st.multiselect("Sélectionnez les colonnes du dataframe",
@@ -42,11 +38,11 @@ if uploaded_file is not None:
         )
 
     if st.sidebar.checkbox("Afficher les Graphiques"):
+        st.title('Data Visualization')
 
         graph_type = st.sidebar.selectbox("Sélectionnez un type de graphique",
                         ['Histogramme', 'Scatter Plot', 'Pie Chart', "Box Plot"])
 
-        
         columns = st.sidebar.selectbox("Sélectionnez les collonnes", 
                          df.columns)
         
@@ -54,7 +50,5 @@ if uploaded_file is not None:
             st.pyplot(sns.histplot(df[columns]).figure)
         
         if graph_type == 'Box Plot':
-            try:
-                st.pyplot(sns.boxplot(x=df[columns]).figure)
-            except:
-                st.error('Sélectionnez une colonne numérique')
+            try:st.pyplot(sns.boxplot(x=df[columns]).figure)
+            except:st.error('Sélectionnez une colonne numérique')
